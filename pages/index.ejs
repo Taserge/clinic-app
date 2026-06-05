@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись к врачу</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+
+    <h1 class="mb-5">Запись к врачу</h1>
+
+    <div class="card shadow p-4" style="width: 500px">
+
+        <form action="/appointments" method="POST">
+
+            <div class="mb-3">
+                <label class="form-label">ФИО</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    name="fullName"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Номер телефона
+                </label>
+
+                <input
+                    type="tel"
+                    class="form-control"
+                    name="phone"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Опишите проблему
+                </label>
+
+                <textarea
+                    class="form-control"
+                    rows="4"
+                    name="problem"
+                    required
+                ></textarea>
+            </div>
+
+            <% if (created) { %>
+                <div class="alert alert-success">
+                    Заявка успешно отправлена
+                </div>
+            <% } %>
+
+            <% if (error) { %>
+                <div class="alert alert-danger">
+                    Ошибка при отправке заявки
+                </div>
+            <% } %>
+
+            <div class="text-center">
+                <button
+                    id="submitBtn"
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Отправить
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
