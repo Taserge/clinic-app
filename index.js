@@ -103,7 +103,7 @@ app.get("/appointments", auth, async (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://user:password@cluster0.qkjuzom.mongodb.net/appointments?appName=Cluster0",
+    "",
   )
   .then(() => {
     app.listen(port, () => {
